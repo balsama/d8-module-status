@@ -66,7 +66,9 @@
 
 <a name="note1"><strong>Note1:</strong></a> "Top" 50 modules are the 50 most installed D7 modules according to [the _Download & Extend_ page on D.O][top50].
 
-<a name="note2"><strong>Note2:</strong></a> Usage statistics -- including core -- scraped from `drupal.org/project/usage/{PROJECT}`.
+<a name="note2"><strong>Note2:</strong></a> Usage statistics -- including core -- scraped from
+`drupal.org/project/usage/{PROJECT}`. Usage Percentages are the number of sites that report using that module divided by the
+total number of sites that report using D7 or D8.
 
 <a name="note3"><strong>Note3:</strong></a> Previous use cases for Webform are largely covered 
 by the Contact module (core) and Contact Storage module (contrib - Beta). Use

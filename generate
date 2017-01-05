@@ -183,7 +183,9 @@ array_unshift($main_table_rows, '|D7 Rank|Module|D8 Status|D7 Usage|D8 Usage|Not
 $main_table = implode("\n", $main_table_rows);
 
 $doc[] = '# Current D8 status of the top ' . $top_n . ' Drupal modules';
+$doc[] = '';
 $doc[] = '#### Last updated: ' . date('d F Y');
+$doc[] = '';
 $doc[] = $main_table;
 
 foreach ($summary_table_rows as $top_n => $top_n_rows) {

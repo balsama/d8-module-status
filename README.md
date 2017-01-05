@@ -1,7 +1,6 @@
-# Current D8 status of the top 200 Drupal modules<sup>[1](#note1)</sup>
-###Last Updated: 05 January 2017
-
-|D7 Rank|Module|D8 Status|D7 Usage<sup>[2](#note2)</sup>|D8 Usage|Notes|
+# Current D8 status of the top 200 Drupal modules
+#### Last updated: 05 January 2017
+|D7 Rank|Module|D8 Status|D7 Usage|D8 Usage|Notes|
 | ------ | ------ | ------ | ------ | ------ | ------ |
 |1|Chaos tool suite (ctools)|Deprecated/replaced/other|88%|30%|Partially in core|
 |2|Views|in core|84%|in core||
@@ -37,10 +36,10 @@
 |32|Localization update|in core|22%|in core||
 |33|Menu block|full release|21%|2%||
 |34|Context|alpha|19%|1%||
-|35|Internationalization|in core|19%|in core||
-|36|Devel|beta|20%|15%||
-|37|Redirect|alpha|18%|8%||
-|38|Global Redirect|Deprecated/replaced/other|18%|0%|Deprecated|
+|35|Devel|beta|20%|15%||
+|36|Redirect|alpha|18%|8%||
+|37|Global Redirect|Deprecated/replaced/other|18%|0%|Deprecated|
+|38|Internationalization|in core|19%|in core||
 |39|IMCE Wysiwyg bridge|Deprecated/replaced/other|16%|0%|Largely unneeded in D8|
 |40|Field collection|alpha|16%|6%||
 |41|Display Suite|full release|15%|8%||
@@ -206,29 +205,46 @@
 
 |SUMMARY - Top 25|||
 | ------ | ------:| ------:| 
-|Deprecated/replaced/other|6|30%|
-|in core|9|45%|
-|rc|2|10%|
-|dev|1|5%|
-|beta|2|10%|
-|full release|2|10%|
-|alpha|3|15%|
+|Deprecated/replaced/other|6|24%|
+|in core|9|36%|
+|rc|2|8%|
+|dev|1|4%|
+|beta|2|8%|
+|full release|2|8%|
+|alpha|3|12%|
+
+
+|SUMMARY - Top 50|||
+| ------ | ------:| ------:| 
+|Deprecated/replaced/other|10|20%|
+|in core|15|30%|
+|rc|3|6%|
+|dev|2|4%|
+|beta|5|10%|
+|full release|5|10%|
+|alpha|8|16%|
+|no D8 development|2|4%|
+
+
+|SUMMARY - Top 100|||
+| ------ | ------:| ------:| 
+|Deprecated/replaced/other|12|12%|
+|in core|19|19%|
+|rc|3|3%|
+|dev|17|17%|
+|beta|13|13%|
+|full release|12|12%|
+|alpha|13|13%|
+|no D8 development|11|11%|
+
 
 |SUMMARY - Top 200|||
 | ------ | ------:| ------:| 
-|Deprecated/replaced/other|17|8.5%|
-|in core|31|15.5%|
+|Deprecated/replaced/other|17|9%|
+|in core|31|16%|
 |rc|4|2%|
 |dev|34|17%|
-|beta|27|13.5%|
+|beta|27|14%|
 |full release|22|11%|
 |alpha|22|11%|
-|no D8 development|43|21.5%|
-
-<a name="note1"><strong>Note1:</strong></a> "Top" 200 modules are the 200 most installed D7 modules according to [the _Download & Extend_ page on D.O][top200].
-
-<a name="note2"><strong>Note2:</strong></a> Usage statistics -- including core -- scraped from
-`drupal.org/project/usage/{PROJECT}`. Usage Percentages are the number of sites that report using that module divided by the
-total number of sites that report using D7 or D8.
-
-[top200]: https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=drupal_core%3A103&f%5B4%5D=sm_field_project_type%3Afull&text=&solrsort=iss_project_release_usage+desc&op=Search)
+|no D8 development|43|22%|

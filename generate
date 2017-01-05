@@ -15,7 +15,7 @@ class rowData {
     private $human_readable_name;
     private $project;
 
-    public function fetchProjectExtra() {
+    private function fetchProjectExtra() {
         $extra = yaml_parse_file('extra.yml');
         $project = $this->project->getMachineName();
         if (in_array($project, $extra['core'])) {
@@ -86,6 +86,16 @@ class rowData {
     public function getD7Rank() {
         return $this->d7_rank;
     }
+    public function getAll() {
+        return [
+            'rank' => $this->getD7Rank(),
+            'module' => $this->getHumanReadableName(),
+            'd8_status' => $this->getStatus(),
+            'd7_usage' => $this->getD7Percentage(),
+            'd8_usage' => $this->getD8Percentage(),
+            'note' => $this->getNote(),
+        ];
+    }
 }
 
 class topProjectList {
@@ -121,100 +131,66 @@ class topProjectList {
     }
 }
 
-class statusTable {
-    private $modules;
-    private $total_d7;
-    private $total_d8;
-    private $rows;
+class stabilityTotals {
     private $stability_totals;
 
-    public function __construct($length) {
-        $top_projects = new topProjectList($length);
-        $modules = $top_projects->getProjects();
-        $this->modules = $modules;
-
-        $core = new Stats('drupal');
-        $this->total_d7 = $core->getCurrentD7Usage();
-        $this->total_d8 = $core->getCurrentD8Usage();
-
-        $this->rows = [];
-        $this->stability_totals = [];
+    public function __construct() {
+        $this->stability_totals =[];
     }
 
-    public function setRow(Stats $project, $iteration) {
-        echo $iteration . '. Fetching project stats for: ' . $project->getHumanReadableName() . "\n";
-        $project_row_data = new rowData($project, $this->total_d7, $this->total_d8, $iteration);
-        $project_row_data->fetchProjectExtra();
-        $line = '|' . $project_row_data->getD7Rank() . '|' . $project_row_data->getHumanReadableName() . '|' . $project_row_data->getStatus() . '|' . $project_row_data->getD7Percentage() . '|' . $project_row_data->getD8Percentage() . '|' . $project_row_data->getNote() . '|';
-        $this->rows[] = $line;
-
-        $this->incrementStabilityTotals($project_row_data->getStatus());
-    }
-
-    private function incrementStabilityTotals($stability) {
+    public function incrementStabilityTotals($stability) {
         $this->stability_totals[$stability] = (isset($this->stability_totals[$stability]) ? $this->stability_totals[$stability]:0);
         $this->stability_totals[$stability]++;
     }
+
     public function getStabilityTotals() {
         return $this->stability_totals;
     }
-
-    public function setHeader() {
-        $header_values = '|D7 Rank|Module|D8 Status|D7 Usage<sup>[2](#note2)</sup>|D8 Usage|Notes|';
-        $header_syntax = '| ------ | ------ | ------ | ------ | ------ | ------ |';
-        array_unshift($this->rows, $header_values, $header_syntax);
-    }
-
-    public function setRows() {
-        $modules = $this->modules;
-        $rank = 1;
-        foreach ($modules as $module) {
-            $project = new Stats($module);
-            $this->setRow($project, $rank);
-            $rank++;
-        }
-    }
-
-    public function getRows() {
-        return $this->rows;
-    }
 }
 
-function make_totals_table($totals, $top_n) {
-    $row = [];
-    $row[] = "\n\n" . '|SUMMARY|||';
-    $row[] = '| ------ | ------:| ------:| ';
-    foreach ($totals as $status => $total) {
-        $row[] = '|' . $status . '|' . $total . '|' . ($total / $top_n) * 100 . '%|';
-    }
-    return implode("\n", $row);
+function md_table_row($row_data) {
+    return '|' . implode('|', $row_data) . '|';
 }
 
+$stability_totals = new stabilityTotals();
+$stability_tables = [];
 $top_n = 200;
-$table = new statusTable($top_n);
-$table->setHeader();
-$table->setRows();
-$rows = $table->getRows();
-$totals = $table->getStabilityTotals();
-$totals_table = make_totals_table($totals, $top_n);
+$top_projects = new topProjectList($top_n);
+$modules = $top_projects->getProjects();
+$core = new Stats('drupal');
+$rank = 1;
+$main_table_rows = [];
+foreach ($modules as $module) {
+    echo $rank . '. Fetching data for: ' . $module . "\n";
+    $module_stats = new Stats($module);
+    $row_data = new rowData($module_stats, $core->getCurrentD7Usage(), $core->getCurrentD8Usage(), $rank);
+    $main_table_rows[] = md_table_row($row_data->getAll());
+    $stability_totals->incrementStabilityTotals($row_data->getStatus());
+    if (in_array($rank, [25, 50, 100, 200])) {
+        $stability_tables[$rank] = $stability_totals->getStabilityTotals();
+    }
+    $rank++;
+}
 
-$markdown_table = implode("\n", $rows);
+$summary_table_rows = [];
+foreach ($stability_tables as $top_n => $totals) {
+    foreach ($totals as $value => $total) {
+        $summary_table_rows[$top_n][] = md_table_row([$value, $total, round(($total / $top_n) * 100) . '%']);
+    }
+}
 
-$readme_header = '# Current D8 status of the top ' . $top_n . ' Drupal modules<sup>[1](#note1)</sup>';
-$readme_header .= "\n" . '###Last Updated: ' . date('d F Y') . "\n";
+array_unshift($main_table_rows, '|D7 Rank|Module|D8 Status|D7 Usage|D8 Usage|Notes|', '| ------ | ------ | ------ | ------ | ------ | ------ |');
+$main_table = implode("\n", $main_table_rows);
 
-$readme_notes = <<<EOF
+$doc[] = '# Current D8 status of the top ' . $top_n . ' Drupal modules';
+$doc[] = '#### Last updated: ' . date('d F Y');
+$doc[] = $main_table;
 
-<a name="note1"><strong>Note1:</strong></a> "Top" 200 modules are the 200 most installed D7 modules according to [the _Download & Extend_ page on D.O][top200].
+foreach ($summary_table_rows as $top_n => $top_n_rows) {
+    array_unshift($top_n_rows, '|SUMMARY - Top ' . $top_n . '|||', '| ------ | ------:| ------:| ');
+    $doc[] = '';
+    $doc[] = implode("\n", $top_n_rows);
+    $doc[] = '';
+}
 
-<a name="note2"><strong>Note2:</strong></a> Usage statistics -- including core -- scraped from
-`drupal.org/project/usage/{PROJECT}`. Usage Percentages are the number of sites that report using that module divided by the
-total number of sites that report using D7 or D8.
-
-[top200]: https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=drupal_core%3A103&f%5B4%5D=sm_field_project_type%3Afull&text=&solrsort=iss_project_release_usage+desc&op=Search)
-
-EOF;
-
-file_put_contents('README.md', implode("\n", [$readme_header, $markdown_table, $totals_table, $readme_notes]));
-
-echo 'New README file has been generated.' . "\n";
+file_put_contents('README.md', implode("\n", $doc));

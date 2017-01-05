@@ -1,0 +1,16 @@
+{
+    "name": "balsama/d8-module-status",
+    "description": "Current D8 status of the top Drupal modules",
+    "type": "project",
+    "require": {
+        "balsama/drupalorg-dom-parser": "0.0.x-dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Balsam",
+            "email": "balsam.adam@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,64 @@
+core:
+  # Overrides the D8Stability to 'in core'.
+  - views
+  - entity
+  - jquery_update
+  - date
+  - ckeditor
+  - link
+  - wysiwyg
+  - entity_reference
+  - transliteration
+  - l10n_update
+  - i18n
+  - email
+  - references
+  - module_filter
+  - entityreference
+  - transliteration
+  - strongarm
+  - cck
+  - admin_views
+  - uuid
+  - multiupload_filefield_widget
+  - multiupload_imagefield_widget
+  - migrate
+  - field_formatter_settings
+  - elements
+  - i18nviews
+  - entity_translation
+  - breakpoints
+  - entitycache
+  - telephone
+  - phone
+  - entity_view_mode
+  - bean
+  - navbar
+  - admin
+  - date_popup_authored
+  - fieldable_panels_panes
+  - views_responsive_grid
+  - defaultconfig
+  - wysiwyg_filter
+
+notes:
+  # Overrides D8Stability to 'other' and adds note to note column.
+  ctools: 'Partially in core'
+  admin_menu: 'Deprecated'
+  webform: 'Deprecated/functionality split'
+  imce: 'Deprecated'
+  features: 'Config management in core'
+  media: 'Deprecated/functionality split'
+  variable: 'Largely unneeded in D8'
+  globalredirect: 'Deprecated'
+  imce_wysiwyg: 'Largely unneeded in D8'
+  addressfield: 'Deprecated'
+  lightbox2: 'Deprecated'
+  page_title: 'Deprecated'
+  imageapi: 'Deprecated'
+  services: 'Partially in core'
+  manual_crop: 'Obsolete'
+  imagecache_token: 'In token module'
+  nodeblock: 'Replaced by entityblock'
+  profile2: 'Replaced by Profile'
+  media_vimeo: 'Replaced by VEF + media entity'

@@ -1,0 +1,220 @@
+#!/usr/bin/env php
+<?php
+
+require_once './vendor/autoload.php';
+
+use Balsama\DrupalOrgProject\Stats;
+use PHPHtmlParser\Dom;
+
+class rowData {
+    private $d7_percentage;
+    private $d8_percentage;
+    private $note;
+    private $status;
+    private $d7_rank;
+    private $human_readable_name;
+    private $project;
+
+    public function fetchProjectExtra() {
+        $extra = yaml_parse_file('extra.yml');
+        $project = $this->project->getMachineName();
+        if (in_array($project, $extra['core'])) {
+            $this->setD8Percentage('in core');
+            $this->setStatus('in core');
+        }
+        if (isset($extra['notes'][$project])) {
+            $this->setNote($extra['notes'][$project]);
+            if ($this->getStatus() != 'in core') {
+                $this->setStatus('Deprecated/replaced/other');
+            }
+        }
+    }
+
+    public function __construct(Stats $project, $total_d7, $total_d8, $rank) {
+        $d7_percentage = round((float)($project->getCurrentD7Usage() / $total_d7) * 100) . '%';
+        $this->setD7Percentage($d7_percentage);
+
+        $d8_percentage = round((float)($project->getCurrentD8Usage() / $total_d8) * 100) . '%';
+        $this->setD8Percentage($d8_percentage);
+
+        $this->setNote('');
+
+        $status = $project->getD8Stability();
+        $this->setStatus($status);
+
+        $this->d7_rank = $rank;
+
+        $human_readable_name = $project->getHumanReadableName();
+        $this->setHumanReadableName($human_readable_name);
+
+        $this->project = $project;
+
+        $this->fetchProjectExtra();
+    }
+
+    private function setD7Percentage($d7_percentage) {
+        $this->d7_percentage = $d7_percentage;
+    }
+    private function setD8Percentage($d8_percentage) {
+        $this->d8_percentage = $d8_percentage;
+    }
+    private function setNote($note = '') {
+        $this->note = $note;
+    }
+    private function setStatus($status) {
+        $this->status = $status;
+    }
+    private function setHumanReadableName($human_readable_name) {
+        $this->human_readable_name = $human_readable_name;
+    }
+
+    public function getD7Percentage() {
+        return $this->d7_percentage;
+    }
+    public function getD8Percentage() {
+        return $this->d8_percentage;
+    }
+    public function getNote() {
+        return $this->note;
+    }
+    public function getStatus() {
+        return $this->status;
+    }
+    public function getHumanReadableName() {
+        return $this->human_readable_name;
+    }
+    public function getD7Rank() {
+        return $this->d7_rank;
+    }
+}
+
+class topProjectList {
+    private $projects;
+
+    private function setProjects($projects) {
+        $this->projects = $projects;
+    }
+
+    private function fetchProjects($length) {
+        $pages = round($length / 25);
+        $modules = [];
+        for ($i = 0; $i < $pages; $i++) {
+            $modules_dom = new Dom;
+            $modules_dom->loadFromUrl('https://www.drupal.org/project/project_module?page=' . $i . '&f[0]=&f[1]=&f[2]=&f[3]=drupal_core%3A103&f[4]=sm_field_project_type%3A%5B%2A%20TO%20%2A%5D&text=&solrsort=iss_project_release_usage%20desc&op=Search');
+            for ($i2 = 0; $i2 < 25; $i2++) {
+                $href = $modules_dom->find('.node-project-module h2 a', $i2)->getAttribute('href');
+                $href_parts = explode('/', $href);
+                $machine_name = end($href_parts);
+                $modules[] = $machine_name;
+            }
+        }
+        return $modules;
+    }
+
+    public function getProjects() {
+        return $this->projects;
+    }
+
+    public function __construct($length) {
+        $projects = $this->fetchProjects($length);
+        $this->setProjects($projects);
+    }
+}
+
+class statusTable {
+    private $modules;
+    private $total_d7;
+    private $total_d8;
+    private $rows;
+    private $stability_totals;
+
+    public function __construct($length) {
+        $top_projects = new topProjectList($length);
+        $modules = $top_projects->getProjects();
+        $this->modules = $modules;
+
+        $core = new Stats('drupal');
+        $this->total_d7 = $core->getCurrentD7Usage();
+        $this->total_d8 = $core->getCurrentD8Usage();
+
+        $this->rows = [];
+        $this->stability_totals = [];
+    }
+
+    public function setRow(Stats $project, $iteration) {
+        echo $iteration . '. Fetching project stats for: ' . $project->getHumanReadableName() . "\n";
+        $project_row_data = new rowData($project, $this->total_d7, $this->total_d8, $iteration);
+        $project_row_data->fetchProjectExtra();
+        $line = '|' . $project_row_data->getD7Rank() . '|' . $project_row_data->getHumanReadableName() . '|' . $project_row_data->getStatus() . '|' . $project_row_data->getD7Percentage() . '|' . $project_row_data->getD8Percentage() . '|' . $project_row_data->getNote() . '|';
+        $this->rows[] = $line;
+
+        $this->incrementStabilityTotals($project_row_data->getStatus());
+    }
+
+    private function incrementStabilityTotals($stability) {
+        $this->stability_totals[$stability] = (isset($this->stability_totals[$stability]) ? $this->stability_totals[$stability]:0);
+        $this->stability_totals[$stability]++;
+    }
+    public function getStabilityTotals() {
+        return $this->stability_totals;
+    }
+
+    public function setHeader() {
+        $header_values = '|D7 Rank|Module|D8 Status|D7 Usage<sup>[2](#note2)</sup>|D8 Usage|Notes|';
+        $header_syntax = '| ------ | ------ | ------ | ------ | ------ | ------ |';
+        array_unshift($this->rows, $header_values, $header_syntax);
+    }
+
+    public function setRows() {
+        $modules = $this->modules;
+        $rank = 1;
+        foreach ($modules as $module) {
+            $project = new Stats($module);
+            $this->setRow($project, $rank);
+            $rank++;
+        }
+    }
+
+    public function getRows() {
+        return $this->rows;
+    }
+}
+
+function make_totals_table($totals, $top_n) {
+    $row = [];
+    $row[] = "\n\n" . '|SUMMARY|||';
+    $row[] = '| ------ | ------:| ------:| ';
+    foreach ($totals as $status => $total) {
+        $row[] = '|' . $status . '|' . $total . '|' . ($total / $top_n) * 100 . '%|';
+    }
+    return implode("\n", $row);
+}
+
+$top_n = 200;
+$table = new statusTable($top_n);
+$table->setHeader();
+$table->setRows();
+$rows = $table->getRows();
+$totals = $table->getStabilityTotals();
+$totals_table = make_totals_table($totals, $top_n);
+
+$markdown_table = implode("\n", $rows);
+
+$readme_header = '# Current D8 status of the top ' . $top_n . ' Drupal modules<sup>[1](#note1)</sup>';
+$readme_header .= "\n" . '###Last Updated: ' . date('d F Y') . "\n";
+
+$readme_notes = <<<EOF
+
+<a name="note1"><strong>Note1:</strong></a> "Top" 200 modules are the 200 most installed D7 modules according to [the _Download & Extend_ page on D.O][top200].
+
+<a name="note2"><strong>Note2:</strong></a> Usage statistics -- including core -- scraped from
+`drupal.org/project/usage/{PROJECT}`. Usage Percentages are the number of sites that report using that module divided by the
+total number of sites that report using D7 or D8.
+
+[top200]: https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=drupal_core%3A103&f%5B4%5D=sm_field_project_type%3Afull&text=&solrsort=iss_project_release_usage+desc&op=Search)
+
+EOF;
+
+file_put_contents('README.md', implode("\n", [$readme_header, $markdown_table, $totals_table, $readme_notes]));
+
+echo 'New README file has been generated.' . "\n";

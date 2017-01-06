@@ -63,3 +63,4 @@ notes:
   profile2: 'Replaced by Profile'
   media_vimeo: 'Replaced by VEF + media entity'
   print: 'Replaced by entity_print'
+  ckeditor_link: 'Replaced by ckeditor_entity_link/linkit'

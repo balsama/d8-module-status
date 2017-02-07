@@ -1,6 +1,6 @@
 # Current D8 status of the top 200 Drupal modules
 
-#### Last updated: 06 February 2017
+#### Last updated: 07 February 2017
 
 |D7 Rank|Module|D8 Status|D7 Usage|D8 Usage|Notes|
 | ------ | ------ | ------ | ------ | ------ | ------ |
@@ -11,8 +11,8 @@
 |5|Pathauto|rc|65%|24%||
 |6|Entity API|in core|61%|in core||
 |7|Administration menu|Deprecated/replaced/other|49%|0%|Deprecated|
-|8|Webform|Deprecated/replaced/other|46%|4%|Deprecated/functionality split|
-|9|jQuery Update|in core|50%|in core||
+|8|jQuery Update|in core|50%|in core||
+|9|Webform|Deprecated/replaced/other|46%|4%|Deprecated/functionality split|
 |10|Date|in core|45%|in core||
 |11|IMCE|Deprecated/replaced/other|42%|5%|Deprecated|
 |12|CKEditor - WYSIWYG HTML editor|in core|40%|in core||
@@ -29,8 +29,8 @@
 |23|XML sitemap|alpha|27%|3%||
 |24|Colorbox|full release|27%|5%||
 |25|Field Group|rc|27%|12%||
-|26|Views Bulk Operations (VBO)|no D8 development|25%|0%||
-|27|Views Slideshow|full release|25%|5%||
+|26|Views Slideshow|full release|25%|5%||
+|27|Views Bulk Operations (VBO)|no D8 development|25%|0%||
 |28|Transliteration|in core|26%|in core||
 |29|Variable|Deprecated/replaced/other|24%|0%|Largely unneeded in D8|
 |30|Panels|beta|23%|5%||
@@ -45,7 +45,7 @@
 |39|IMCE Wysiwyg bridge|Deprecated/replaced/other|16%|0%|Largely unneeded in D8|
 |40|Field collection|alpha|16%|5%||
 |41|Strongarm|in core|16%|in core||
-|42|File Entity (fieldable files)|beta|16%|2%||
+|42|File Entity (fieldable files)|in core|16%|in core||
 |43|Display Suite|full release|15%|7%||
 |44|Menu attributes|no D8 development|15%|0%||
 |45|Block Class|alpha|15%|3%||
@@ -70,11 +70,11 @@
 |64|Page Title|Deprecated/replaced/other|8%|0%|Deprecated|
 |65|Taxonomy menu|full release|8%|2%||
 |66|Diff|rc|9%|2%||
-|67|ImageCache Actions|no D8 development|9%|0%||
-|68|Plupload integration|beta|9%|0%||
-|69|Views PHP|dev|9%|0%||
-|70|Mime Mail|dev|8%|0%||
-|71|Views data export|alpha|9%|0%||
+|67|Views data export|alpha|9%|0%||
+|68|ImageCache Actions|no D8 development|9%|0%||
+|69|Plupload integration|beta|9%|0%||
+|70|Views PHP|dev|9%|0%||
+|71|Mime Mail|dev|8%|0%||
 |72|Honeypot|full release|8%|3%||
 |73|Quick Tabs|dev|8%|0%||
 |74|Search API|beta|8%|6%||
@@ -96,7 +96,7 @@
 |90|Voting API|alpha|7%|1%||
 |91|Conditional Fields|dev|6%|0%||
 |92|Video Embed Field|full release|6%|8%||
-|93|Title|dev|6%|0%||
+|93|Title|in core|6%|in core||
 |94|jCarousel|no D8 development|6%|0%||
 |95|CKEditor Link - A plugin to easily create links to Drupal internal paths|Deprecated/replaced/other|6%|0%|Replaced by ckeditor_entity_link/linkit|
 |96|Flag|alpha|6%|1%||
@@ -178,14 +178,14 @@
 |172|view_unpublished|alpha|3%|0%||
 |173|Smart Trim|full release|3%|1%||
 |174|Omega Tools|no D8 development|3%|0%||
-|175|Panelizer|beta|3%|2%||
-|176|Geocoder|alpha|3%|1%||
-|177|Service links|no D8 development|3%|0%||
+|175|Geocoder|alpha|3%|1%||
+|176|Service links|no D8 development|3%|0%||
+|177|Panelizer|beta|3%|2%||
 |178|Hierarchical Select|no D8 development|3%|0%||
 |179|Simple Google Maps|full release|3%|2%||
 |180|Checklist API|full release|3%|0%||
 |181|Password Policy|alpha|3%|0%||
-|182|String Overrides|no D8 development|3%|0%||
+|182|String Overrides|in core|3%|in core||
 |183|Webform Ajax|no D8 development|3%|0%||
 |184|Twitter|dev|3%|0%||
 |185|Workbench|alpha|3%|1%||
@@ -218,34 +218,34 @@
 |SUMMARY - Top 50|||
 | ------ | ------:| ------:| 
 |Deprecated/replaced/other|10|20%|
-|in core|15|30%|
+|in core|16|32%|
 |rc|5|10%|
 |dev|2|4%|
 |full release|6|12%|
 |alpha|8|16%|
 |no D8 development|2|4%|
-|beta|2|4%|
+|beta|1|2%|
 
 
 |SUMMARY - Top 100|||
 | ------ | ------:| ------:| 
 |Deprecated/replaced/other|13|13%|
-|in core|19|19%|
+|in core|21|21%|
 |rc|6|6%|
-|dev|15|15%|
+|dev|14|14%|
 |full release|13|13%|
 |alpha|14|14%|
 |no D8 development|10|10%|
-|beta|10|10%|
+|beta|9|9%|
 
 
 |SUMMARY - Top 200|||
 | ------ | ------:| ------:| 
 |Deprecated/replaced/other|19|10%|
-|in core|31|16%|
+|in core|34|17%|
 |rc|6|3%|
-|dev|29|15%|
+|dev|28|14%|
 |full release|23|12%|
 |alpha|25|13%|
-|no D8 development|42|21%|
-|beta|25|13%|
+|no D8 development|41|21%|
+|beta|24|12%|

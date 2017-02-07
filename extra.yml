@@ -28,6 +28,7 @@ core:
   - i18nviews
   - entity_translation
   - breakpoints
+  - breakpoint
   - entitycache
   - telephone
   - phone
@@ -41,6 +42,21 @@ core:
   - defaultconfig
   - wysiwyg_filter
   - stringoverrides
+  - admin_language
+  - cachetags
+  - caption_filter
+  - edit
+  - quickedit
+  - email
+  - entityreference
+  - entity
+  - file_entity
+  - hidden_field
+  - title
+  - user_picture_field
+  - placeholder
+  - restws
+  - ahah_helper
 
 notes:
   # Overrides D8Stability to 'other' and adds note to note column.

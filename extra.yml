@@ -40,6 +40,7 @@ core:
   - views_responsive_grid
   - defaultconfig
   - wysiwyg_filter
+  - stringoverrides
 
 notes:
   # Overrides D8Stability to 'other' and adds note to note column.

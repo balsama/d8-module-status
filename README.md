@@ -1,6 +1,6 @@
 # Current D8 status of the top 200 Drupal modules
 
-#### Last updated: 07 February 2017
+#### Last updated: 08 February 2017
 
 |D7 Rank|Module|D8 Status|D7 Usage|D8 Usage|Notes|
 | ------ | ------ | ------ | ------ | ------ | ------ |
@@ -65,8 +65,8 @@
 |59|Universally Unique IDentifier|in core|10%|in core||
 |60|Site map|no D8 development|9%|0%||
 |61|Media: YouTube|no D8 development|10%|0%||
-|62|Lightbox2|Deprecated/replaced/other|9%|0%|Deprecated|
-|63|Advanced help|dev|9%|0%||
+|62|Advanced help|dev|9%|0%||
+|63|Lightbox2|Deprecated/replaced/other|9%|0%|Deprecated|
 |64|Page Title|Deprecated/replaced/other|8%|0%|Deprecated|
 |65|Taxonomy menu|full release|8%|2%||
 |66|Diff|rc|9%|2%||
@@ -106,19 +106,19 @@
 |100|Linkit - Enriched linking experience|beta|6%|4%||
 |101|Printer, email and PDF versions|Deprecated/replaced/other|6%|0%|Replaced by entity_print|
 |102|Simplenews|alpha|6%|3%||
-|103|Search API Database Search|no D8 development|6%|0%||
-|104|Site verification|dev|6%|0%||
+|103|Site verification|dev|6%|0%||
+|104|Search API Database Search|no D8 development|6%|0%||
 |105|Exclude Node Title|beta|6%|1%||
 |106|DraggableViews|full release|6%|1%||
 |107|Automatic Nodetitles|no D8 development|6%|0%||
 |108|LoginToboggan|no D8 development|5%|0%||
 |109|External Links|full release|5%|2%||
 |110|geoPHP|beta|5%|0%||
-|111|Location|no D8 development|5%|0%||
-|112|Fivestar|dev|5%|0%||
+|111|Fivestar|dev|5%|0%||
+|112|Location|no D8 development|5%|0%||
 |113|Masquerade|beta|5%|1%||
 |114|Multiple forms|no D8 development|5%|0%||
-|115|Nodequeue|no D8 development|5%|0%||
+|115|Nodequeue|Deprecated/replaced/other|5%|0%|Replaced by entity queue|
 |116|Migrate|in core|5%|in core||
 |117|Image URL Formatter|beta|5%|3%||
 |118|Geofield|alpha|5%|1%||
@@ -130,11 +130,11 @@
 |124|Responsive Menus|dev|5%|0%||
 |125|Profile 2|Deprecated/replaced/other|4%|0%|Replaced by Profile|
 |126|Better Formats|dev|5%|0%||
-|127|Webform Validation|no D8 development|4%|0%||
+|127|Webform Validation|Deprecated/replaced/other|4%|0%|Consolidated with field_validation|
 |128|ShareThis|beta|4%|2%||
 |129|Content Construction Kit (CCK)|in core|4%|in core||
 |130|Entity Translation|in core|5%|in core||
-|131|Bundle Copy|no D8 development|5%|0%||
+|131|Bundle Copy|in core|5%|in core||
 |132|Custom Breadcrumbs|no D8 development|4%|0%||
 |133|GMap Module|no D8 development|4%|0%||
 |134|Taxonomy Manager|dev|4%|1%||
@@ -164,15 +164,15 @@
 |158|Nivo Slider|full release|4%|0%||
 |159|EU Cookie Compliance|beta|4%|2%||
 |160|Breakpoints|in core|4%|in core||
-|161|Memcache API and Integration|alpha|3%|1%||
-|162|Search 404|beta|4%|0%||
-|163|Token Filter|beta|3%|1%||
-|164|Security Review|dev|3%|0%||
-|165|MultiBlock|no D8 development|3%|0%||
+|161|Search 404|beta|4%|0%||
+|162|Token Filter|beta|3%|1%||
+|163|Security Review|dev|3%|0%||
+|164|Memcache API and Integration|alpha|3%|1%||
+|165|MultiBlock|in core|3%|in core||
 |166|Bean|in core|3%|in core||
 |167|Entity view modes|in core|3%|in core||
 |168|CSS Injector|no D8 development|3%|0%||
-|169|Module Missing Message Fixer|no D8 development|3%|0%||
+|169|Module Missing Message Fixer|Deprecated/replaced/other|3%|0%|Only relevant for 7.x-50|
 |170|TB Mega Menu|no D8 development|3%|0%||
 |171|Delta|no D8 development|3%|0%||
 |172|view_unpublished|alpha|3%|0%||
@@ -241,11 +241,11 @@
 
 |SUMMARY - Top 200|||
 | ------ | ------:| ------:| 
-|Deprecated/replaced/other|19|10%|
-|in core|34|17%|
+|Deprecated/replaced/other|22|11%|
+|in core|36|18%|
 |rc|6|3%|
 |dev|28|14%|
 |full release|23|12%|
 |alpha|25|13%|
-|no D8 development|41|21%|
+|no D8 development|36|18%|
 |beta|24|12%|

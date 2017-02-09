@@ -84,3 +84,4 @@ notes:
   print: 'Replaced by entity_print'
   ckeditor_link: 'Replaced by ckeditor_entity_link/linkit'
   module_missing_message_fixer: 'Only relevant for 7.x-50'
+  webform_validation: 'Consolidated with field_validation'

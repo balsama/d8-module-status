@@ -58,6 +58,7 @@ core:
   - restws
   - ahah_helper
   - multiblock
+  - bundle_copy
 
 notes:
   # Overrides D8Stability to 'other' and adds note to note column.

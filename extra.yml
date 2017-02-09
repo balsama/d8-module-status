@@ -81,3 +81,4 @@ notes:
   media_vimeo: 'Replaced by VEF + media entity'
   print: 'Replaced by entity_print'
   ckeditor_link: 'Replaced by ckeditor_entity_link/linkit'
+  module_missing_message_fixer: 'Only relevant for 7.x-50'

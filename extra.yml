@@ -57,6 +57,7 @@ core:
   - placeholder
   - restws
   - ahah_helper
+  - multiblock
 
 notes:
   # Overrides D8Stability to 'other' and adds note to note column.

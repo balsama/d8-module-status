@@ -187,6 +187,7 @@ $doc[] = '';
 $doc[] = '#### Last updated: ' . date('d F Y');
 $doc[] = '';
 $doc[] = $main_table;
+$doc[] = '';
 
 foreach ($summary_table_rows as $top_n => $top_n_rows) {
     array_unshift($top_n_rows, '|SUMMARY - Top ' . $top_n . '|||', '| ------ | ------:| ------:| ');

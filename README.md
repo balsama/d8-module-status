@@ -1,6 +1,6 @@
 # Current D8 status of the top 200 Drupal modules
 
-#### Last updated: 15 March 2017
+#### Last updated: 16 March 2017
 
 |D7 Rank|Module|D8 Status|D7 Usage|D8 Usage|Notes|
 | ------ | ------ | ------ | ------ | ------ | ------ |
@@ -21,15 +21,15 @@
 |15|Module Filter|in core|35%|in core||
 |16|Metatag|full release|34%|15%||
 |17|Wysiwyg|in core|34%|in core||
-|18|Entity reference|in core|29%|in core||
-|19|Features|Deprecated/replaced/other|29%|7%|Config management in core|
-|20|Rules|alpha|30%|2%||
+|18|Rules|alpha|30%|2%||
+|19|Entity reference|in core|29%|in core||
+|20|Features|Deprecated/replaced/other|29%|7%|Config management in core|
 |21|Media|Deprecated/replaced/other|29%|0%|Deprecated/functionality split|
 |22|Backup and Migrate|alpha|29%|4%||
 |23|XML sitemap|alpha|28%|3%||
-|24|Colorbox|full release|27%|5%||
-|25|Views Bulk Operations (VBO)|no D8 development|27%|0%||
-|26|Field Group|rc|28%|13%||
+|24|Field Group|rc|28%|13%||
+|25|Colorbox|full release|27%|5%||
+|26|Views Bulk Operations (VBO)|no D8 development|27%|0%||
 |27|Views Slideshow|full release|26%|6%||
 |28|Transliteration|in core|27%|in core||
 |29|CAPTCHA|beta|24%|6%||
@@ -87,8 +87,8 @@
 |81|FileField Sources|dev|7%|0%||
 |82|Insert|dev|7%|0%||
 |83|OAuth|full release|7%|0%||
-|84|Drupal Commerce|beta|7%|1%||
-|85|Facet API|no D8 development|7%|0%||
+|84|Facet API|no D8 development|7%|0%||
+|85|Drupal Commerce|beta|7%|1%||
 |86|Scheduler|alpha|7%|3%||
 |87|@font-your-face|full release|7%|1%||
 |88|Nice Menus|beta|7%|0%||
@@ -205,15 +205,15 @@
 |199|Message|alpha|3%|1%||
 |200|Real Name|dev|3%|0%||
 
+
 |SUMMARY - Top 25|||
 | ------ | ------:| ------:| 
 |Deprecated/replaced/other|6|24%|
 |in core|9|36%|
-|rc|2|8%|
+|rc|3|12%|
 |dev|1|4%|
 |full release|3|12%|
 |alpha|3|12%|
-|no D8 development|1|4%|
 
 
 |SUMMARY - Top 50|||

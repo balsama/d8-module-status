@@ -4,21 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c305fc8280408fe30ee249a19aeb190f",
-    "content-hash": "21b4b96d04e06afe2710be88968c50e1",
+    "content-hash": "c552bd0163e76c22e5efc9eba6a67942",
     "packages": [
         {
             "name": "balsama/drupalorg-dom-parser",
-            "version": "0.0.x-dev",
+            "version": "dev-fix-tests",
             "source": {
                 "type": "git",
                 "url": "https://github.com/balsama/drupalorg-dom-parser.git",
-                "reference": "6f18b8daebf3a6fac1a85ddd01ea8913f4b6d73d"
+                "reference": "ad9788cbb10a6c8040bda80935c17ddb2fcb7536"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/balsama/drupalorg-dom-parser/zipball/6f18b8daebf3a6fac1a85ddd01ea8913f4b6d73d",
-                "reference": "6f18b8daebf3a6fac1a85ddd01ea8913f4b6d73d",
+                "url": "https://api.github.com/repos/balsama/drupalorg-dom-parser/zipball/ad9788cbb10a6c8040bda80935c17ddb2fcb7536",
+                "reference": "ad9788cbb10a6c8040bda80935c17ddb2fcb7536",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +43,7 @@
                 }
             ],
             "description": "Scraps statistics about projects on Drupal.org",
-            "time": "2017-01-05 04:39:07"
+            "time": "2017-11-17T01:28:33+00:00"
         },
         {
             "name": "paquettg/php-html-parser",
@@ -93,7 +92,7 @@
                 "html",
                 "parser"
             ],
-            "time": "2016-04-06 15:24:40"
+            "time": "2016-04-06T15:24:40+00:00"
         },
         {
             "name": "paquettg/string-encode",
@@ -139,7 +138,7 @@
                 "encoding",
                 "string"
             ],
-            "time": "2014-05-29 18:38:09"
+            "time": "2014-05-29T18:38:09+00:00"
         }
     ],
     "packages-dev": [],

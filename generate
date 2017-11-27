@@ -81,7 +81,7 @@ class rowData {
         return $this->status;
     }
     public function getHumanReadableName() {
-        return $this->human_readable_name;
+        return '[' . $this->human_readable_name . '](https://drupal.org/project/' . $this->project->getMachineName() . ')';
     }
     public function getD7Rank() {
         return $this->d7_rank;

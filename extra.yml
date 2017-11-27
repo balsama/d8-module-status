@@ -59,6 +59,9 @@ core:
   - ahah_helper
   - multiblock
   - bundle_copy
+  - taxonomy_display
+  - features_extra
+  - special_menu_items
 
 notes:
   # Overrides D8Stability to 'other' and adds note to note column.
@@ -86,3 +89,19 @@ notes:
   module_missing_message_fixer: 'Only relevant for 7.x-50'
   webform_validation: 'Consolidated with field_validation'
   nodequeue: 'Replaced by entity queue'
+  omega_tools: 'Only needed for < 4.x branch of 7.x'
+  webform_ajax: 'Included in Webform 8.x-5.x'
+  hierarchical_select: 'Replaced by Client-side hierarchical select'
+  custom_breadcrumbs: 'Replaced by Easy Breadcrumb'
+  better_formats: 'Replaced by Allowed Formats'
+  feeds_tamper: 'Replaced by Tamper'
+  search_api_db: 'Moved into Search API'
+  location: 'Split into several contrib modules'
+  auto_nodetitle: 'Replaced by Auto Entity Label'
+  imce_mkdir: 'Moved into IMCE module'
+  facetapi: 'Replaced by Facets'
+  imagecache_actions: 'Replaced by Image Effects'
+  site_map: 'Replaced by Sitemap'
+  media_youtube: 'Replaced by Video Embed Field'
+  node_clone: 'Replaced by Entity Clone'
+  special_menu_items: 'Replaced by Link Attributes widget'

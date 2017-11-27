@@ -1,6 +1,6 @@
 # Current D8 status of the top 200 Drupal modules
 
-#### Last updated: 26 November 2017
+#### Last updated: 27 November 2017
 
 |D7 Rank|Module|D8 Status|D7 Usage|D8 Usage|Notes|
 | ------ | ------ | ------ | ------ | ------ | ------ |
@@ -59,19 +59,19 @@
 |53|[Flex Slider](https://drupal.org/project/flexslider)|beta|13%|2%||
 |54|[Feeds](https://drupal.org/project/feeds)|dev|12%|1%||
 |55|[Better Exposed Filters](https://drupal.org/project/better_exposed_filters)|alpha|12%|8%||
-|56|[Special menu items](https://drupal.org/project/special_menu_items)|no D8 development|12%|0%||
+|56|[Special menu items](https://drupal.org/project/special_menu_items)|in core|12%|in core|Replaced by Link Attributes widget|
 |57|[Calendar](https://drupal.org/project/calendar)|dev|11%|2%||
 |58|[SMTP Authentication Support](https://drupal.org/project/smtp)|beta|12%|7%||
 |59|[Universally Unique IDentifier](https://drupal.org/project/uuid)|in core|11%|in core||
-|60|[Media: YouTube](https://drupal.org/project/media_youtube)|no D8 development|10%|0%||
+|60|[Media: YouTube](https://drupal.org/project/media_youtube)|Deprecated/replaced/other|10%|0%|Replaced by Video Embed Field|
 |61|[Views data export](https://drupal.org/project/views_data_export)|alpha|10%|1%||
 |62|[reCAPTCHA](https://drupal.org/project/recaptcha)|full release|10%|8%||
-|63|[Site map](https://drupal.org/project/site_map)|no D8 development|10%|0%||
-|64|[ImageCache Actions](https://drupal.org/project/imagecache_actions)|no D8 development|9%|0%||
+|63|[Site map](https://drupal.org/project/site_map)|Deprecated/replaced/other|10%|0%|Replaced by Sitemap|
+|64|[ImageCache Actions](https://drupal.org/project/imagecache_actions)|Deprecated/replaced/other|9%|0%|Replaced by Image Effects|
 |65|[Views PHP](https://drupal.org/project/views_php)|dev|10%|1%||
 |66|[Multiupload Filefield Widget](https://drupal.org/project/multiupload_filefield_widget)|in core|10%|in core||
 |67|[Plupload integration](https://drupal.org/project/plupload)|beta|10%|0%||
-|68|[Node clone](https://drupal.org/project/node_clone)|dev|9%|1%||
+|68|[Node clone](https://drupal.org/project/node_clone)|Deprecated/replaced/other|9%|1%|Replaced by Entity Clone|
 |69|[Lightbox2](https://drupal.org/project/lightbox2)|Deprecated/replaced/other|9%|0%|Deprecated|
 |70|[Diff](https://drupal.org/project/diff)|rc|9%|5%||
 |71|[Mime Mail](https://drupal.org/project/mimemail)|alpha|9%|1%||
@@ -88,7 +88,7 @@
 |82|[FileField Sources](https://drupal.org/project/filefield_sources)|dev|8%|0%||
 |83|[Insert](https://drupal.org/project/insert)|beta|8%|0%||
 |84|[Scheduler](https://drupal.org/project/scheduler)|full release|7%|4%||
-|85|[Facet API](https://drupal.org/project/facetapi)|no D8 development|7%|0%||
+|85|[Facet API](https://drupal.org/project/facetapi)|Deprecated/replaced/other|7%|0%|Replaced by Facets|
 |86|[Conditional Fields](https://drupal.org/project/conditional_fields)|alpha|7%|1%||
 |87|[Drupal Commerce](https://drupal.org/project/commerce)|full release|7%|1%||
 |88|[OAuth 1.0](https://drupal.org/project/oauth)|full release|7%|0%||
@@ -101,16 +101,16 @@
 |95|[Nice Menus](https://drupal.org/project/nice_menus)|beta|6%|1%||
 |96|[Adminimal Administration Menu](https://drupal.org/project/adminimal_admin_menu)|no D8 development|7%|0%||
 |97|[DraggableViews](https://drupal.org/project/draggableviews)|full release|6%|2%||
-|98|[IMCE Mkdir](https://drupal.org/project/imce_mkdir)|no D8 development|7%|0%||
+|98|[IMCE Mkdir](https://drupal.org/project/imce_mkdir)|Deprecated/replaced/other|7%|0%|Moved into IMCE module|
 |99|[Linkit - Enriched linking experience](https://drupal.org/project/linkit)|full release|6%|9%||
 |100|[jCarousel](https://drupal.org/project/jcarousel)|full release|6%|0%||
 |101|[Flag](https://drupal.org/project/flag)|alpha|6%|2%||
 |102|[Printer, email and PDF versions](https://drupal.org/project/print)|Deprecated/replaced/other|6%|0%|Replaced by entity_print|
-|103|[Automatic Nodetitles](https://drupal.org/project/auto_nodetitle)|no D8 development|6%|0%||
+|103|[Automatic Nodetitles](https://drupal.org/project/auto_nodetitle)|Deprecated/replaced/other|6%|0%|Replaced by Auto Entity Label|
 |104|[Site verification](https://drupal.org/project/site_verify)|dev|6%|0%||
 |105|[Exclude Node Title](https://drupal.org/project/exclude_node_title)|beta|6%|1%||
 |106|[External Links](https://drupal.org/project/extlink)|full release|6%|3%||
-|107|[Search API Database Search](https://drupal.org/project/search_api_db)|no D8 development|6%|0%||
+|107|[Search API Database Search](https://drupal.org/project/search_api_db)|Deprecated/replaced/other|6%|0%|Moved into Search API|
 |108|[Simplenews](https://drupal.org/project/simplenews)|alpha|6%|4%||
 |109|[Module Missing Message Fixer](https://drupal.org/project/module_missing_message_fixer)|Deprecated/replaced/other|6%|0%|Only relevant for 7.x-50|
 |110|[Fivestar](https://drupal.org/project/fivestar)|dev|6%|0%||
@@ -118,25 +118,25 @@
 |112|[Image URL Formatter](https://drupal.org/project/image_url_formatter)|beta|6%|4%||
 |113|[LoginToboggan](https://drupal.org/project/logintoboggan)|no D8 development|6%|0%||
 |114|[Entity Translation](https://drupal.org/project/entity_translation)|in core|5%|in core||
-|115|[Location](https://drupal.org/project/location)|no D8 development|5%|0%||
+|115|[Location](https://drupal.org/project/location)|Deprecated/replaced/other|5%|0%|Split into several contrib modules|
 |116|[Masquerade](https://drupal.org/project/masquerade)|beta|6%|3%||
 |117|[Field formatter settings](https://drupal.org/project/field_formatter_settings)|in core|6%|in core||
 |118|[Multiple forms](https://drupal.org/project/multiform)|no D8 development|5%|0%||
-|119|[Features Extra](https://drupal.org/project/features_extra)|no D8 development|5%|0%||
+|119|[Features Extra](https://drupal.org/project/features_extra)|in core|5%|in core||
 |120|[Responsive Menus](https://drupal.org/project/responsive_menus)|dev|5%|0%||
 |121|[Geofield](https://drupal.org/project/geofield)|alpha|5%|2%||
 |122|[Media: Vimeo](https://drupal.org/project/media_vimeo)|Deprecated/replaced/other|5%|0%|Replaced by VEF + media entity|
 |123|[Views Bootstrap](https://drupal.org/project/views_bootstrap)|full release|5%|3%||
 |124|[Bundle Copy](https://drupal.org/project/bundle_copy)|in core|5%|in core||
 |125|[Elements](https://drupal.org/project/elements)|in core|5%|in core||
-|126|[Feeds Tamper](https://drupal.org/project/feeds_tamper)|no D8 development|5%|0%||
+|126|[Feeds Tamper](https://drupal.org/project/feeds_tamper)|Deprecated/replaced/other|5%|0%|Replaced by Tamper|
 |127|[Node export](https://drupal.org/project/node_export)|no D8 development|5%|0%||
 |128|[Migrate](https://drupal.org/project/migrate)|in core|5%|in core||
 |129|[Nodequeue](https://drupal.org/project/nodequeue)|Deprecated/replaced/other|5%|0%|Replaced by entity queue|
 |130|[Options Element](https://drupal.org/project/options_element)|no D8 development|5%|0%||
 |131|[Webform Validation](https://drupal.org/project/webform_validation)|Deprecated/replaced/other|5%|0%|Consolidated with field_validation|
 |132|[EVA: Entity Views Attachment](https://drupal.org/project/eva)|full release|5%|1%||
-|133|[Better Formats](https://drupal.org/project/better_formats)|dev|5%|0%||
+|133|[Better Formats](https://drupal.org/project/better_formats)|Deprecated/replaced/other|5%|0%|Replaced by Allowed Formats|
 |134|[Weight](https://drupal.org/project/weight)|full release|5%|2%||
 |135|[Taxonomy Manager](https://drupal.org/project/taxonomy_manager)|dev|5%|1%||
 |136|[GMap Module](https://drupal.org/project/gmap)|no D8 development|5%|0%||
@@ -150,7 +150,7 @@
 |144|[ShareThis](https://drupal.org/project/sharethis)|beta|4%|2%||
 |145|[Custom Search](https://drupal.org/project/custom_search)|beta|4%|1%||
 |146|[Views Field View](https://drupal.org/project/views_field_view)|beta|5%|2%||
-|147|[Custom Breadcrumbs](https://drupal.org/project/custom_breadcrumbs)|no D8 development|4%|0%||
+|147|[Custom Breadcrumbs](https://drupal.org/project/custom_breadcrumbs)|Deprecated/replaced/other|4%|0%|Replaced by Easy Breadcrumb|
 |148|[Profile 2](https://drupal.org/project/profile2)|Deprecated/replaced/other|4%|0%|Replaced by Profile|
 |149|[Chosen](https://drupal.org/project/chosen)|full release|4%|3%||
 |150|[EU Cookie Compliance](https://drupal.org/project/eu_cookie_compliance)|beta|5%|3%||
@@ -172,10 +172,10 @@
 |166|[Security Review](https://drupal.org/project/security_review)|dev|4%|1%||
 |167|[Meta tags quick](https://drupal.org/project/metatags_quick)|alpha|4%|0%||
 |168|[Memcache API and Integration](https://drupal.org/project/memcache)|alpha|4%|2%||
-|169|[Hierarchical Select](https://drupal.org/project/hierarchical_select)|no D8 development|4%|0%||
+|169|[Hierarchical Select](https://drupal.org/project/hierarchical_select)|Deprecated/replaced/other|4%|0%|Replaced by Client-side hierarchical select|
 |170|[Entity view modes](https://drupal.org/project/entity_view_mode)|in core|4%|in core||
 |171|[CSS Injector](https://drupal.org/project/css_injector)|no D8 development|4%|0%||
-|172|[Webform Ajax](https://drupal.org/project/webform_ajax)|no D8 development|4%|0%||
+|172|[Webform Ajax](https://drupal.org/project/webform_ajax)|Deprecated/replaced/other|4%|0%|Included in Webform 8.x-5.x|
 |173|[Token Filter](https://drupal.org/project/token_filter)|beta|4%|2%||
 |174|[Password Policy](https://drupal.org/project/password_policy)|alpha|3%|2%||
 |175|[Role Delegation](https://drupal.org/project/role_delegation)|alpha|3%|1%||
@@ -192,7 +192,7 @@
 |186|[Delta](https://drupal.org/project/delta)|no D8 development|3%|0%||
 |187|[Nodeblock](https://drupal.org/project/nodeblock)|Deprecated/replaced/other|3%|0%|Replaced by entityblock|
 |188|[Link checker](https://drupal.org/project/linkchecker)|no D8 development|3%|0%||
-|189|[Omega Tools](https://drupal.org/project/omega_tools)|no D8 development|3%|0%||
+|189|[Omega Tools](https://drupal.org/project/omega_tools)|Deprecated/replaced/other|3%|0%|Only needed for < 4.x branch of 7.x|
 |190|[Checklist API](https://drupal.org/project/checklistapi)|full release|3%|1%||
 |191|[Panelizer](https://drupal.org/project/panelizer)|full release|3%|3%||
 |192|[Menu position](https://drupal.org/project/menu_position)|dev|3%|0%||
@@ -201,9 +201,9 @@
 |195|[Advanced CSS/JS Aggregation](https://drupal.org/project/advagg)|full release|3%|2%||
 |196|[Entity cache](https://drupal.org/project/entitycache)|in core|3%|in core||
 |197|[Viewfield](https://drupal.org/project/viewfield)|alpha|3%|1%||
-|198|[Workbench](https://drupal.org/project/workbench)|full release|3%|2%||
-|199|[Taxonomy display](https://drupal.org/project/taxonomy_display)|no D8 development|3%|0%||
-|200|[AddThis](https://drupal.org/project/addthis)|no D8 development|3%|0%||
+|198|[AddToAny Share Buttons](https://drupal.org/project/addtoany)|full release|3%|4%||
+|199|[Workbench](https://drupal.org/project/workbench)|full release|3%|2%||
+|200|[Taxonomy display](https://drupal.org/project/taxonomy_display)|in core|3%|in core||
 
 
 |SUMMARY - Top 25|||
@@ -229,23 +229,23 @@
 
 |SUMMARY - Top 100|||
 | ------ | ------:| ------:|
-|in core|21|21%|
-|Deprecated/replaced/other|13|13%|
+|in core|22|22%|
+|Deprecated/replaced/other|19|19%|
 |full release|25|25%|
-|dev|9|9%|
+|dev|8|8%|
 |alpha|11|11%|
 |beta|12|12%|
-|no D8 development|8|8%|
+|no D8 development|2|2%|
 |rc|1|1%|
 
 
 |SUMMARY - Top 200|||
 | ------ | ------:| ------:|
-|in core|35|18%|
-|Deprecated/replaced/other|22|11%|
-|full release|39|20%|
-|dev|24|12%|
+|in core|38|19%|
+|Deprecated/replaced/other|37|19%|
+|full release|40|20%|
+|dev|22|11%|
 |alpha|22|11%|
 |beta|25|13%|
-|no D8 development|31|16%|
+|no D8 development|14|7%|
 |rc|2|1%|

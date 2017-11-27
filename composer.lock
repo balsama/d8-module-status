@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c552bd0163e76c22e5efc9eba6a67942",
+    "content-hash": "873cbe5ae84081e304f0d0607f0be62c",
     "packages": [
         {
             "name": "balsama/drupalorg-dom-parser",
-            "version": "dev-fix-tests",
+            "version": "1.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/balsama/drupalorg-dom-parser.git",
-                "reference": "ad9788cbb10a6c8040bda80935c17ddb2fcb7536"
+                "reference": "bfdee4e4d4d8f26fa23f808389ac14a5703979e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/balsama/drupalorg-dom-parser/zipball/ad9788cbb10a6c8040bda80935c17ddb2fcb7536",
-                "reference": "ad9788cbb10a6c8040bda80935c17ddb2fcb7536",
+                "url": "https://api.github.com/repos/balsama/drupalorg-dom-parser/zipball/bfdee4e4d4d8f26fa23f808389ac14a5703979e9",
+                "reference": "bfdee4e4d4d8f26fa23f808389ac14a5703979e9",
                 "shasum": ""
             },
             "require": {
@@ -42,8 +42,8 @@
                     "email": "balsam.adam@gmail.com"
                 }
             ],
-            "description": "Scraps statistics about projects on Drupal.org",
-            "time": "2017-11-17T01:28:33+00:00"
+            "description": "Scrapes statistics about projects on Drupal.org",
+            "time": "2017-11-27T04:10:49+00:00"
         },
         {
             "name": "paquettg/php-html-parser",
@@ -144,9 +144,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "balsama/drupalorg-dom-parser": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

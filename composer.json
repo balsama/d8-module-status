@@ -3,7 +3,7 @@
     "description": "Current D8 status of the top Drupal modules",
     "type": "project",
     "require": {
-        "balsama/drupalorg-dom-parser": "dev-fix-tests"
+        "balsama/drupalorg-dom-parser": "1.0.0-alpha2"
     },
     "license": "MIT",
     "authors": [

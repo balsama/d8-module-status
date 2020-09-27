@@ -1,3 +1,6 @@
+# ARCHIVED
+This repository is out of date and has been archived.
+
 # Current D8 status of the top 200 Drupal modules
 
 #### Last updated: 18 January 2018
